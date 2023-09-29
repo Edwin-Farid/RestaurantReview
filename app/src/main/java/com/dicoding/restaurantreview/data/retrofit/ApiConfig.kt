@@ -1,5 +1,6 @@
 package com.dicoding.restaurantreview.data.retrofit
 
+import com.dicoding.restaurantreview.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
