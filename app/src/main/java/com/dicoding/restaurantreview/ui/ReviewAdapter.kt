@@ -1,10 +1,12 @@
 package com.dicoding.restaurantreview.ui
 
 import android.view.LayoutInflater
-import android.view.ViewGroup
-import android.widget.ListAdapter
+
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import android.view.ViewGroup
+
 import com.dicoding.restaurantreview.data.response.CustomerReviewsItem
 import com.dicoding.restaurantreview.databinding.ItemReviewBinding
 
@@ -14,7 +16,7 @@ class ReviewAdapter : ListAdapter<CustomerReviewsItem, ReviewAdapter.MyViewHolde
         return MyViewHolder(binding)
     }
 
-    override fun onBindingViewHolder(holder: MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val review = getItem(position)
         holder.bind(review)
     }
