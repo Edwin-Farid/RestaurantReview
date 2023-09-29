@@ -1,17 +1,16 @@
 package com.dicoding.restaurantreview.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.dicoding.restaurantreview.R
+import com.dicoding.restaurantreview.data.retrofit.ApiConfig
 import com.dicoding.restaurantreview.data.response.CustomerReviewsItem
 import com.dicoding.restaurantreview.data.response.Restaurant
 import com.dicoding.restaurantreview.data.response.RestaurantResponse
-import com.dicoding.restaurantreview.data.retrofit.ApiConfig
 import com.dicoding.restaurantreview.databinding.ActivityMainBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -27,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -77,7 +76,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setReviewData(consumerReviews: List<CustomerReviewsItem>) {
-        val adapter = ReviewAdapter
+        val adapter = ReviewAdapter()
         adapter.submitList(consumerReviews)
         binding.rvReview.adapter = adapter
         binding.edReview.setText("")
