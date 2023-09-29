@@ -2,15 +2,19 @@ package com.dicoding.restaurantreview.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.dicoding.restaurantreview.R
 import com.dicoding.restaurantreview.data.response.CustomerReviewsItem
 import com.dicoding.restaurantreview.data.response.Restaurant
 import com.dicoding.restaurantreview.data.response.RestaurantResponse
 import com.dicoding.restaurantreview.data.retrofit.ApiConfig
 import com.dicoding.restaurantreview.databinding.ActivityMainBinding
+import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
@@ -79,7 +83,7 @@ class MainActivity : AppCompatActivity() {
         binding.edReview.setText("")
     }
 
-    private fun showLoading(isLaoding: Boolean) {
+    private fun showLoading(isLoading: Boolean) {
         if (isLoading) {
             binding.progressBar.visibility = View.VISIBLE
         } else {
