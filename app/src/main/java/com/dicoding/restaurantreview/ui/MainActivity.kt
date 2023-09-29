@@ -1,7 +1,8 @@
-package com.dicoding.restaurantreview
+package com.dicoding.restaurantreview.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.dicoding.restaurantreview.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
