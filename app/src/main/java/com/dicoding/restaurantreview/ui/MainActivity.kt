@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.dicoding.restaurantreview.data.response.CustomerReviewsItem
 import com.dicoding.restaurantreview.data.response.Restaurant
 import com.dicoding.restaurantreview.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -44,6 +45,10 @@ class MainActivity : AppCompatActivity() {
         }
         mainViewModel.isLoading.observe(this) {
             showLoading(it)
+        }
+
+        mainViewModel.snackbarText.observe(this){
+            Snackbar.make(window.decorView.rootView, it, Snackbar.LENGTH_SHORT).show()
         }
 
         binding.btnSend.setOnClickListener { view ->
